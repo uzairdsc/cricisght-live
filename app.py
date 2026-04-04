@@ -185,8 +185,8 @@ if DEFAULT_DATA_SOURCE == "S3_Live-bbb":
         
         s3_file_key = st.sidebar.text_input(
             "Enter S3 file path:",
-            # value="PSL-26_1527562-Comm.csv"
-            value="PSL-26_1527563-Comm.csv"
+            value="PSL-26_1527562-Comm.csv"
+            # value="PSL-26_1527563-Comm.csv"
             # value="PSL_26_bbb.csv"
         )
         
@@ -331,13 +331,28 @@ if DEFAULT_DATA_SOURCE == "S3_Live-bbb":
 #     if st.session_state.df is not None:
 #         st.sidebar.info(f"Current data: {len(st.session_state.df):,} rows")
 
-
 # Add a clear data button
+# if st.session_state.df is not None:
+#     if st.sidebar.button("🗑️ Clear Loaded Data"):
+#         st.cache_data.clear()
+#         st.session_state.df = None
+#         st.rerun()
+        
+
+# Add refresh and clear data buttons
 if st.session_state.df is not None:
-    if st.sidebar.button("🗑️ Clear Loaded Data"):
-        st.cache_data.clear()
-        st.session_state.df = None
-        st.rerun()
+    col_refresh, col_clear = st.sidebar.columns(2)
+    
+    with col_refresh:
+        if st.sidebar.button("🔄 Refresh Data", key="refresh_data_btn"):
+            st.cache_data.clear()
+            st.rerun()
+    
+    with col_clear:
+        if st.sidebar.button("🗑️ Clear Data", key="clear_data_btn"):
+            st.cache_data.clear()
+            st.session_state.df = None
+            st.rerun()
         
 # Add this after loading data
 if st.session_state.df is not None:
