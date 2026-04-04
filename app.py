@@ -34,7 +34,7 @@ from SpikeUpd import spike_graph_plot as spike_plot_custom, spike_graph_plot_des
 from WagonUpd import wagon_zone_plot, wagon_zone_plot_descriptive
 from DismissalPlot import dismissal_plot
 
-st.set_page_config(page_title="PSL Cricket Wagon Wheel App" ,page_icon="🏏" ,layout="wide")
+st.set_page_config(page_title="PSL Live Cricket Wagon Wheel App" ,page_icon="🏏" ,layout="wide")
 st.title("🏏 PSL Live - Wagons Analysis Dashboard")
 
 
