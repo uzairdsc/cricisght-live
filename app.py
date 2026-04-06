@@ -359,9 +359,14 @@ if st.session_state.df is not None:
     
     # Get the latest/max inning
     max_inns = int(df_stats['inns'].max())
+    total_innings = df_stats['inns'].nunique()
     
     # Filter for that inning
     latest_inns_data = df_stats[df_stats['inns'] == max_inns]
+    
+    # For the recent/latest inning
+    latest_inning = df['inns'].max()
+    total_overs_in_latest = df[df['inns'] == latest_inning]['over'].max()
     
     # Get max overs in that inning
     # max_overs = int(latest_inns_data['oversActual'].max())
@@ -385,6 +390,11 @@ if st.session_state.df is not None:
         st.sidebar.markdown(f"## • {team}")
         # st.sidebar.write(f"  • {team}")
     
+    col_total, col_toal_overs = st.sidebar.columns(2)
+    with col_total:
+        st.metric("Total Inninga", total_innings)
+    with col_toal_overs:
+        st.metric("Overs in Recent Inns", total_overs_in_latest)
     # # Optional: Show total rows and date range
     # st.sidebar.divider()
     # st.sidebar.write(f"**Total Records:** {len(df_stats):,}")
