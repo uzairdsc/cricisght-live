@@ -850,7 +850,7 @@ def dismissal_plot(
         
         # Responsive positioning
         if not show_bowl_kind:
-            ax.text(180, 590, f"     Type: {bowl_type_text}", 
+            ax.text(180, 590, f"Bowl Type: {bowl_type_text}", 
                     fontsize=10, ha='center', color='darkviolet', fontweight='bold')
         else:
             ax.text(180, 590, f"Bowl Type: {bowl_type_text}", 
