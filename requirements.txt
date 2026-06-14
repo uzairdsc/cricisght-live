@@ -1,7 +1,7 @@
 streamlit
 pandas
 numpy
-matplotlib=3.9.2
+matplotlib==3.9.2
 boto3
 openpyxl
 python-dotenv
