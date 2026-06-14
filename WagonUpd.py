@@ -313,7 +313,8 @@ def wagon_zone_plot(
     # ✅ HIGHLIGHT TOP ZONES ONLY IF THEY HAVE RUNS > 0
     top_quadrants = [i for i in sorted(range(8), key=lambda i: quadrant_totals[i], reverse=True) if quadrant_totals[i] > 0][:2]
     rank_color = {top_quadrants[i]: 1.0 - i * 0.3 for i in range(len(top_quadrants))}
-    cmap = cm.get_cmap('Blues')
+    # cmap = cm.get_cmap('Blues')
+    cmap = plt.colormaps['Blues']
 
     for i in range(8):
         theta1, theta2 = i * 45, (i + 1) * 45
@@ -912,7 +913,8 @@ def wagon_zone_plot_descriptive(
     # ✅ HIGHLIGHT TOP ZONES ONLY IF THEY HAVE RUNS > 0
     top_quadrants = [i for i in sorted(range(8), key=lambda i: quadrant_totals[i], reverse=True) if quadrant_totals[i] > 0][:2]
     rank_color = {top_quadrants[i]: 1.0 - i * 0.3 for i in range(len(top_quadrants))}
-    cmap = cm.get_cmap('Blues')
+    # cmap = cm.get_cmap('Blues')
+    cmap = plt.colormaps['Blues']
 
     for i in range(8):
         theta1, theta2 = i * 45, (i + 1) * 45
