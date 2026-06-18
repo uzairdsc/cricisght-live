@@ -448,7 +448,7 @@ def spike_graph_plot(
      # Add background image
     if not transparent and show_ground:
         # bg_img = mpimg.imread("ground_high_res.png")
-        bg_img = mpimg.imread("Ground_Group_24.png")
+        bg_img = mpimg.imread("assets/Ground_Group_24.png")
         ax.imshow(bg_img, extent=[0, 360, 20, 360], aspect='auto', zorder=0)
 
     # Sort shots so 0s are drawn first, 6s last (so 6s are on top)
@@ -1263,7 +1263,7 @@ def spike_graph_plot_descriptive(
     if not transparent and show_ground:
         # bg_img = mpimg.imread("ground_high_res.png")
         # bg_img = mpimg.imread("streamlitapp/Ground_Group_24.png")
-        bg_img = mpimg.imread("Ground_Group_24.png")
+        bg_img = mpimg.imread("assets/Ground_Group_24.png")
         ax.imshow(bg_img, extent=[0, 360, 20, 360], aspect='auto', zorder=0)
 
     # Sort shots so 0s are drawn first, 6s last (so 6s are on top)
